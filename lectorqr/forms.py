@@ -11,7 +11,6 @@ class AlumnoForm(forms.ModelForm):
             'fecha_nacimiento',
             'email',
             'telefono',
-            'fecha_de_registro',
             'texto',
             'foto_perfil',
             'foto_resultado',
@@ -38,10 +37,6 @@ class AlumnoForm(forms.ModelForm):
                 'class': 'form-control',
                 'placeholder': '55-2478-5578'
             }),
-            'fecha_de_registro': forms.DateInput(attrs={
-                'class': 'form-control',
-                'type': 'date'
-            }),
             'texto': forms.Textarea(attrs={
                 'class': 'form-control',
                 'rows': 3
@@ -53,3 +48,4 @@ class AlumnoForm(forms.ModelForm):
                 'class': 'form-control-file'
             }),
         }
+
