@@ -26,12 +26,20 @@ class Alumno(models.Model):
     )
 
     # 🔐 CAMPOS CIFRADOS
-    nombre = EncryptedTextField(verbose_name="Nombre")
-    fecha_nacimiento = EncryptedDateField(verbose_name="Fecha de nacimiento")
+    nombre = EncryptedTextField(verbose_name="Nombre")    
     email = EncryptedTextField(verbose_name="Correo electrónico")
-    telefono = EncryptedTextField(verbose_name="Teléfono")
-    fecha_de_registro = EncryptedDateField(verbose_name="Fecha de registro")
+    telefono = EncryptedTextField(verbose_name="Teléfono")    
     texto = EncryptedTextField(verbose_name="Texto")
+
+    # 📅 FECHAS NO CIFRADAS (CORRECTO)
+    fecha_nacimiento = models.DateField(
+        verbose_name="Fecha de nacimiento"
+    )
+
+    fecha_de_registro = models.DateField(
+        auto_now_add=True,
+        verbose_name="Fecha de registro"
+    )
 
     # 📷 IMÁGENES (NO CIFRADAS)
     foto_perfil = models.ImageField(
